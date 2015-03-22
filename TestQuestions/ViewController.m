@@ -13,7 +13,9 @@ const int cardsType = 4;
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSArray *cardViews;
+@property (nonatomic, strong) NSMutableArray *cardViews;
+@property NSInteger cardsAmount;
+@property NSInteger currentCard;
 
 @end
 
@@ -21,22 +23,18 @@ const int cardsType = 4;
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a
     
-//    MainCardView *mainCard = [[MainCardView alloc] init];
-//    mainCard.currentPosition = back;
-//    [self.view addSubview:mainCard];
-//    
-//    MainCardView *mainCard1 = [[MainCardView alloc] init];
-//    mainCard1.currentPosition = front;
-//    [self.view addSubview:mainCard1];
+    self.cardsAmount = 4;
     
-    self.cardViews = @[[MainCardView frontCard],
-                       [MainCardView backCard],
-                       [MainCardView invisibleCard],
-                       [MainCardView invisibleCard]];
+    self.cardViews = [[NSMutableArray alloc] init];
+    
+    [self.cardViews addObject:[MainCardView frontCard]];
+    [self.cardViews addObject:[MainCardView backCard]];
+    [self.cardViews addObject:[MainCardView inQueueCard]];
+    for (int i = 0; i < self.cardsAmount-3; i++) {
+        [self.cardViews addObject:[MainCardView invisibleCard]];
+    }
     
     for (int i = (int)[self.cardViews count]-1; i--; i >= 0) {
         [self.view addSubview:self.cardViews[i]];
