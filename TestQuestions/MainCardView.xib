@@ -16,15 +16,26 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRk-qP-cCE">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="krz-dP-2Yp">
+                                    <rect key="frame" x="8" y="11" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="8A0-t7-xJd"/>
+                                        <constraint firstAttribute="height" constant="30" id="LyI-0C-Q8p"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
                             <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="krz-dP-2Yp" firstAttribute="leading" secondItem="HRk-qP-cCE" secondAttribute="leading" constant="8" id="5H1-OA-agV"/>
+                                <constraint firstItem="krz-dP-2Yp" firstAttribute="top" secondItem="HRk-qP-cCE" secondAttribute="top" constant="11" id="p2u-wV-gms"/>
+                            </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyk-dX-6PG">
                             <rect key="frame" x="115" y="508" width="90" height="30"/>
                             <color key="backgroundColor" red="0.070588235289999995" green="0.1960784314" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="0o5-Dg-zQS"/>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="Qk1-cP-NRC"/>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="T9g-cb-2s6"/>
                             </constraints>
                             <state key="normal" title="Button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,17 +53,36 @@
                         <constraint firstItem="HRk-qP-cCE" firstAttribute="leading" secondItem="3U3-AV-pGP" secondAttribute="leading" id="wAm-aB-LuX"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK5-bq-MAL">
+                    <rect key="frame" x="270" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="dnU-nF-1ul"/>
+                        <constraint firstAttribute="height" constant="50" id="hn2-Pl-X6h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="0.16078431369999999" green="0.68627450980000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.16078431372549021" green="0.68627450980392157" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="3U3-AV-pGP" firstAttribute="top" secondItem="Yrr-R9-Nko" secondAttribute="top" id="AGH-sv-L63"/>
                 <constraint firstAttribute="bottom" secondItem="3U3-AV-pGP" secondAttribute="bottom" id="Pzn-rY-gXQ"/>
+                <constraint firstItem="vK5-bq-MAL" firstAttribute="top" secondItem="Yrr-R9-Nko" secondAttribute="top" id="URP-F8-6Ju"/>
                 <constraint firstItem="3U3-AV-pGP" firstAttribute="leading" secondItem="Yrr-R9-Nko" secondAttribute="leading" id="ZNh-Az-Y6l"/>
                 <constraint firstAttribute="trailing" secondItem="3U3-AV-pGP" secondAttribute="trailing" id="kT1-u3-WkF"/>
+                <constraint firstAttribute="trailing" secondItem="vK5-bq-MAL" secondAttribute="trailing" id="uND-nR-OdQ"/>
             </constraints>
-            <point key="canvasLocation" x="338" y="362"/>
+            <point key="canvasLocation" x="357" y="387"/>
         </view>
+        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jfc-f8-42R">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
     </objects>
+    <resources>
+        <image name="star" width="100" height="100"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
