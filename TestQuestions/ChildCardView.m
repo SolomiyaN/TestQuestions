@@ -18,4 +18,16 @@
 }
 */
 
+
+
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+//        [self addSubview:[[[NSBundle mainBundle] loadNibNamed:@"ChildCardView"
+//                                                        owner:self
+//                                                      options:nil] objectAtIndex:0]];
+    }
+    return self;
+}
 @end

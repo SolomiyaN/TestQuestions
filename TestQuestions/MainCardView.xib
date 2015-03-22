@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainCardView"/>
@@ -11,20 +11,44 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dse-Rj-UYN">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="482"/>
-                    <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3U3-AV-pGP" customClass="ChildCardView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRk-qP-cCE">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                            <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyk-dX-6PG">
+                            <rect key="frame" x="115" y="508" width="90" height="30"/>
+                            <color key="backgroundColor" red="0.070588235289999995" green="0.1960784314" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="0o5-Dg-zQS"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="Qk1-cP-NRC"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="T9g-cb-2s6"/>
+                            </constraints>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="320" id="bGY-aG-Co6"/>
+                        <constraint firstItem="HRk-qP-cCE" firstAttribute="top" secondItem="3U3-AV-pGP" secondAttribute="top" id="6OA-He-gL2"/>
+                        <constraint firstAttribute="centerX" secondItem="tyk-dX-6PG" secondAttribute="centerX" id="IF9-hD-evH"/>
+                        <constraint firstItem="tyk-dX-6PG" firstAttribute="top" secondItem="HRk-qP-cCE" secondAttribute="bottom" constant="30" id="MCw-Kf-F5J"/>
+                        <constraint firstAttribute="trailing" secondItem="HRk-qP-cCE" secondAttribute="trailing" id="TEQ-SM-3Pa"/>
+                        <constraint firstAttribute="bottom" secondItem="tyk-dX-6PG" secondAttribute="bottom" constant="30" id="p2a-2a-k4d"/>
+                        <constraint firstItem="HRk-qP-cCE" firstAttribute="leading" secondItem="3U3-AV-pGP" secondAttribute="leading" id="wAm-aB-LuX"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.53333333333333333" green="0.78431372549019607" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.16078431372549021" green="0.68627450980392157" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="dse-Rj-UYN" secondAttribute="bottom" constant="86" id="HXp-xE-RKW"/>
-                <constraint firstAttribute="trailing" secondItem="dse-Rj-UYN" secondAttribute="trailing" id="gx4-wa-5lQ"/>
-                <constraint firstItem="dse-Rj-UYN" firstAttribute="leading" secondItem="Yrr-R9-Nko" secondAttribute="leading" id="nvh-Bn-gVa"/>
-                <constraint firstItem="dse-Rj-UYN" firstAttribute="top" secondItem="Yrr-R9-Nko" secondAttribute="top" id="vFg-Rv-TRa"/>
+                <constraint firstItem="3U3-AV-pGP" firstAttribute="top" secondItem="Yrr-R9-Nko" secondAttribute="top" id="AGH-sv-L63"/>
+                <constraint firstAttribute="bottom" secondItem="3U3-AV-pGP" secondAttribute="bottom" id="Pzn-rY-gXQ"/>
+                <constraint firstItem="3U3-AV-pGP" firstAttribute="leading" secondItem="Yrr-R9-Nko" secondAttribute="leading" id="ZNh-Az-Y6l"/>
+                <constraint firstAttribute="trailing" secondItem="3U3-AV-pGP" secondAttribute="trailing" id="kT1-u3-WkF"/>
             </constraints>
             <point key="canvasLocation" x="338" y="362"/>
         </view>

@@ -18,6 +18,7 @@
 		32C278771ABEBF3700311215 /* MainCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C278761ABEBF3700311215 /* MainCardView.m */; };
 		32C278791ABEC1C700311215 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C278781ABEC1C700311215 /* ViewController.xib */; };
 		32C2787B1ABEC27600311215 /* MainCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C2787A1ABEC27600311215 /* MainCardView.xib */; };
+		90F2B1031ABF225400CAA30C /* ChildCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F2B1021ABF225400CAA30C /* ChildCardView.m */; };
 		AFFDAAD81ABF02AA00E3DA2D /* CardsEnumarator.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFDAAD71ABF02AA00E3DA2D /* CardsEnumarator.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		32C278761ABEBF3700311215 /* MainCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCardView.m; sourceTree = "<group>"; };
 		32C278781ABEC1C700311215 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		32C2787A1ABEC27600311215 /* MainCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCardView.xib; sourceTree = "<group>"; };
+		90F2B1011ABF225400CAA30C /* ChildCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildCardView.h; sourceTree = "<group>"; };
+		90F2B1021ABF225400CAA30C /* ChildCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCardView.m; sourceTree = "<group>"; };
 		AFFDAAD61ABF02AA00E3DA2D /* CardsEnumarator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsEnumarator.h; sourceTree = "<group>"; };
 		AFFDAAD71ABF02AA00E3DA2D /* CardsEnumarator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsEnumarator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +163,8 @@
 			children = (
 				32C278751ABEBF3700311215 /* MainCardView.h */,
 				32C278761ABEBF3700311215 /* MainCardView.m */,
+				90F2B1011ABF225400CAA30C /* ChildCardView.h */,
+				90F2B1021ABF225400CAA30C /* ChildCardView.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				32301E361ABF155100A92040 /* CardObject.m in Sources */,
 				32C278551ABEBB6E00311215 /* ViewController.m in Sources */,
 				32C278521ABEBB6E00311215 /* AppDelegate.m in Sources */,
+				90F2B1031ABF225400CAA30C /* ChildCardView.m in Sources */,
 				AFFDAAD81ABF02AA00E3DA2D /* CardsEnumarator.m in Sources */,
 				32C2784F1ABEBB6E00311215 /* main.m in Sources */,
 				32301E321ABEFFE100A92040 /* DataDownloader.m in Sources */,

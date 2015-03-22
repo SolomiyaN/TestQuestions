@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ChildCardView.h"
 enum statesPosition
 {
     front,
@@ -30,7 +30,8 @@ struct PositionView
 
 @interface MainCardView : UIView
 {
-    enum statesPosition _currentPosition;    
+    enum statesPosition _currentPosition;
+    ChildCardView * _child;
 }
 
 @property  (nonatomic) enum statesPosition currentPosition;
