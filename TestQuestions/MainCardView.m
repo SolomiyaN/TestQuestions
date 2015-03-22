@@ -55,6 +55,10 @@ const float kKoeficientScale = 5.f;
 {
     self.layer.cornerRadius = 10;
     self.clipsToBounds = YES;
+    
+    _childView = [ChildCardView new];
+    _childView.frame = self.bounds;
+    [self addSubview: _childView];
 }
 
 

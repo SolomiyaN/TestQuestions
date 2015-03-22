@@ -16,6 +16,8 @@
 		32C278771ABEBF3700311215 /* MainCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C278761ABEBF3700311215 /* MainCardView.m */; };
 		32C278791ABEC1C700311215 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C278781ABEC1C700311215 /* ViewController.xib */; };
 		32C2787B1ABEC27600311215 /* MainCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C2787A1ABEC27600311215 /* MainCardView.xib */; };
+		90C35CCC1ABF02170097D476 /* ChildCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C35CCB1ABF02170097D476 /* ChildCardView.xib */; };
+		90C35CCF1ABF026D0097D476 /* ChildCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C35CCE1ABF026D0097D476 /* ChildCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		32C278761ABEBF3700311215 /* MainCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCardView.m; sourceTree = "<group>"; };
 		32C278781ABEC1C700311215 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		32C2787A1ABEC27600311215 /* MainCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCardView.xib; sourceTree = "<group>"; };
+		90C35CCB1ABF02170097D476 /* ChildCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildCardView.xib; sourceTree = "<group>"; };
+		90C35CCD1ABF026D0097D476 /* ChildCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildCardView.h; sourceTree = "<group>"; };
+		90C35CCE1ABF026D0097D476 /* ChildCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,8 @@
 			children = (
 				32C278751ABEBF3700311215 /* MainCardView.h */,
 				32C278761ABEBF3700311215 /* MainCardView.m */,
+				90C35CCD1ABF026D0097D476 /* ChildCardView.h */,
+				90C35CCE1ABF026D0097D476 /* ChildCardView.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -137,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				32C2787A1ABEC27600311215 /* MainCardView.xib */,
+				90C35CCB1ABF02170097D476 /* ChildCardView.xib */,
 			);
 			name = CustomXibs;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				32C278791ABEC1C700311215 /* ViewController.xib in Resources */,
 				32C2785A1ABEBB6E00311215 /* Images.xcassets in Resources */,
 				32C2787B1ABEC27600311215 /* MainCardView.xib in Resources */,
+				90C35CCC1ABF02170097D476 /* ChildCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C35CCF1ABF026D0097D476 /* ChildCardView.m in Sources */,
 				32C278551ABEBB6E00311215 /* ViewController.m in Sources */,
 				32C278521ABEBB6E00311215 /* AppDelegate.m in Sources */,
 				32C2784F1ABEBB6E00311215 /* main.m in Sources */,
@@ -440,6 +450,7 @@
 				32C2786E1ABEBB6E00311215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32C2786F1ABEBB6E00311215 /* Build configuration list for PBXNativeTarget "TestQuestionsTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +459,7 @@
 				32C278711ABEBB6E00311215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
