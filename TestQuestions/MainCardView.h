@@ -22,6 +22,12 @@ struct PositionView
     CGSize size;
 };
 
+@protocol MainCardViewDelegate <NSObject>
+
+- (void)changeCards;
+
+@end
+
 @interface MainCardView : UIView
 {
  
@@ -32,6 +38,7 @@ struct PositionView
 }
 
 @property  (nonatomic) enum statesPosition currentPosition;
+@property (nonatomic, weak) id<MainCardViewDelegate> delegate;
 
 - (void)setCurrentPosition:(enum statesPosition)currentPosition;
 

@@ -109,6 +109,7 @@ const float kKoeficientScale = 5.f;
 
 - (void)adjustFrontFrame
 {
+    self.alpha = 1.;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize frontSize = CGSizeMake(frame.size.width * kFrontHorizontalPersent / 100,
                                   frame.size.height * kFrontVerticalPersent / 100);
@@ -161,7 +162,8 @@ const float kKoeficientScale = 5.f;
         [UIView animateWithDuration:0.1 animations:^{
             self.frame = newFrame;
         } completion:^(BOOL finished) {
-            
+            [self.delegate changeCards];
+            self.currentPosition = invisible;
         }];
 }
 @end

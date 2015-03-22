@@ -8,14 +8,17 @@
 
 #import "ViewController.h"
 #import "MainCardView.h"
+#import "CardsEnumarator.h"
 
 const int cardsType = 4;
 
-@interface ViewController ()
+@interface ViewController () <MainCardViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *cardViews;
 @property NSInteger cardsAmount;
 @property NSInteger currentCard;
+
+@property (nonatomic, strong) CardsEnumarator *cardsEnumarator;
 
 @end
 
@@ -26,6 +29,7 @@ const int cardsType = 4;
     [super viewDidLoad];
     
     self.cardsAmount = 4;
+    self.cardsEnumarator = [CardsEnumarator cardEnumaratorWithMaxNumber:self.cardsAmount-1];
     
     self.cardViews = [[NSMutableArray alloc] init];
     
@@ -38,12 +42,26 @@ const int cardsType = 4;
     
     for (int i = (int)[self.cardViews count]-1; i--; i >= 0) {
         [self.view addSubview:self.cardViews[i]];
+        ((MainCardView *)self.cardViews[i]).delegate = self;
     }
+    
+    self.currentCard = 0;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma marks - MainCardViewDelegate Methods
+
+- (void)changeCards {
+    [self.view sendSubviewToBack:((MainCardView *)self.cardViews[self.currentCard])];
+    self.currentCard = [self.cardsEnumarator nextTo:self.currentCard];
+
+    NSInteger frontCardPosition = [self.cardViews indexOfObject:self.cardViews[self.currentCard]];
+    ((MainCardView *)self.cardViews[frontCardPosition]).currentPosition = front;
+    
+    NSInteger backCardPosition = [self.cardsEnumarator nextTo:frontCardPosition];
+    ((MainCardView *)self.cardViews[backCardPosition]).currentPosition = back;
+    
+    NSInteger inqueueCardPosition = [self.cardsEnumarator nextTo:backCardPosition];
+    ((MainCardView *)self.cardViews[inqueueCardPosition]).currentPosition = inQueue;
 }
 
 @end
