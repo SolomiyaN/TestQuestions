@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MainCardView.h"
+#import "CardsEnumarator.h"
 #import "DataDownloader.h"
 
 const int cardsType = 4;
@@ -41,11 +42,12 @@ const int cardsType = 4;
         [self.cardViews addObject:[MainCardView invisibleCard]];
     }
     
-    MainCardView *mainCard1 = [[MainCardView alloc] init];
-    mainCard1.currentPosition = front;
-    [self.view addSubview:mainCard1];
+    for (int i = (int)[self.cardViews count]; i >= 0; i--) {
+        [self.view addSubview:self.cardViews[i]];
+        ((MainCardView *)self.cardViews[i]).delegate = self;
+    }
     
-    
+    self.currentCard = 0;
     DataDownloader *dataDownloader = [DataDownloader new];
     [dataDownloader downloadDataWithCompletion:^(BOOL finished, NSMutableArray *responseArray) {
         if(finished){
