@@ -30,11 +30,7 @@ struct PositionView
 
 @interface MainCardView : UIView
 {
- 
-    struct PositionView _viewPosition;
-    
-    enum statesPosition _currentPosition;
-    
+    enum statesPosition _currentPosition;    
 }
 
 @property  (nonatomic) enum statesPosition currentPosition;

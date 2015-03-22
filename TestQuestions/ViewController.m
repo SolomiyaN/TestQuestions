@@ -30,7 +30,7 @@ const int cardsType = 4;
 {
     [super viewDidLoad];
     
-    self.cardsAmount = 4;
+    self.cardsAmount = 3;
     self.cardsEnumarator = [CardsEnumarator cardEnumaratorWithMaxNumber:self.cardsAmount-1];
     
     self.cardViews = [[NSMutableArray alloc] init];

@@ -15,15 +15,15 @@ const float kBackHorizontalPersent = 80.f;
 const float kBackVerticalPersent = 65.f;
 
 const float kKoeficientScale = 5.f;
-@implementation MainCardView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+@interface MainCardView ( )
+
+@property BOOL draggingMode;
+@property CGPoint touchLocation;
+
+@end
+
+@implementation MainCardView
 
 + (instancetype)defaultCard {
     return [[MainCardView alloc] init];
@@ -112,10 +112,12 @@ const float kKoeficientScale = 5.f;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize frontSize = CGSizeMake(frame.size.width * kFrontHorizontalPersent / 100,
                                   frame.size.height * kFrontVerticalPersent / 100);
-//    _viewPosition.size = frontSize;
-    self.frame = CGRectMake(0, 0, frontSize.width, frontSize.height);
     float sideSpace = (frame.size.width - frontSize.width) / 2;
-    self.center = CGPointMake(frame.size.width/2, frame.size.height/2 + sideSpace);
+    
+    [UIView animateWithDuration:0.4 animations:^ {
+        self.frame = CGRectMake(0, 0, frontSize.width, frontSize.height);
+        self.center = CGPointMake(frame.size.width/2, frame.size.height/2 + sideSpace);
+    }];
 }
 
 - (void)adjustBackFrame
@@ -124,10 +126,12 @@ const float kKoeficientScale = 5.f;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize backSize = CGSizeMake(frame.size.width * kBackHorizontalPersent / 100,
                                   frame.size.height * kBackVerticalPersent / 100);
-//    _viewPosition.size = backSize;
-    self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
     float sideSpace = (frame.size.width - backSize.width) / 2.8;
-    self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
+    
+    [UIView animateWithDuration:0.3 animations:^ {
+        self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
+        self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
+    }];
 }
 
 - (void) increaseSizeDuringTouch
@@ -142,14 +146,30 @@ const float kKoeficientScale = 5.f;
     }];
 }
 
+#pragma mark - Touches Handling
+
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touch ");
     [self increaseSizeDuringTouch];
+    self.draggingMode = YES;
+    UITouch *touch = [[event allTouches] anyObject];
+    self.touchLocation = [touch locationInView:touch.view];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:touch.view];
+    if (self.draggingMode) {
+        CGFloat newX = self.frame.origin.x + touchLocation.x - self.touchLocation.x;
+        CGFloat newY = self.frame.origin.y + touchLocation.y - self.touchLocation.y;
+        self.frame = CGRectMake(newX, newY, self.frame.size.width, self.frame.size.height);
+    }
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    self.draggingMode = YES;
+    
     CGRect newFrame = CGRectMake(self.frame.origin.x,
                                  [UIScreen mainScreen].bounds.size.height,
                                  self.frame.size.width,
@@ -158,7 +178,12 @@ const float kKoeficientScale = 5.f;
             self.frame = newFrame;
         } completion:^(BOOL finished) {
             [self.delegate changeCards];
-            self.currentPosition = invisible;
+            self.currentPosition = inQueue;
+            
+            self.frame = CGRectMake(self.frame.origin.x,
+                                    -[UIScreen mainScreen].bounds.size.height,
+                                    self.frame.size.width,
+                                    self.frame.size.height);
         }];
 }
 @end
