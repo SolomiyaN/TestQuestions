@@ -25,6 +25,34 @@ const float kKoeficientScale = 5.f;
 }
 */
 
++ (instancetype)defaultCard {
+    return [[MainCardView alloc] init];
+}
+
++ (instancetype)frontCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = front;
+    return card;
+}
+
++ (instancetype)backCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = back;
+    return card;
+}
+
++ (instancetype)inQueueCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = back; // frame should be the same as back card has in order to look good on cards switch
+    return card;
+}
+
++ (instancetype)invisibleCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = invisible;
+    return card;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -67,7 +95,8 @@ const float kKoeficientScale = 5.f;
             [self adjustFrontFrame];
             break;
         case back:
-            case inQueue:
+        case inQueue:
+        case invisible:
             [self adjustBackFrame];
             break;
             
@@ -78,10 +107,12 @@ const float kKoeficientScale = 5.f;
 
 - (void)adjustFrontFrame
 {
+    NSLog(@"%@", self);
+    self.alpha = 1.;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize frontSize = CGSizeMake(frame.size.width * kFrontHorizontalPersent / 100,
                                   frame.size.height * kFrontVerticalPersent / 100);
-    _viewPosition.size = frontSize;
+//    _viewPosition.size = frontSize;
     self.frame = CGRectMake(0, 0, frontSize.width, frontSize.height);
     float sideSpace = (frame.size.width - frontSize.width) / 2;
     self.center = CGPointMake(frame.size.width/2, frame.size.height/2 + sideSpace);
@@ -93,7 +124,7 @@ const float kKoeficientScale = 5.f;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize backSize = CGSizeMake(frame.size.width * kBackHorizontalPersent / 100,
                                   frame.size.height * kBackVerticalPersent / 100);
-    _viewPosition.size = backSize;
+//    _viewPosition.size = backSize;
     self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
     float sideSpace = (frame.size.width - backSize.width) / 2.8;
     self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
@@ -126,7 +157,8 @@ const float kKoeficientScale = 5.f;
         [UIView animateWithDuration:0.1 animations:^{
             self.frame = newFrame;
         } completion:^(BOOL finished) {
-            
+            [self.delegate changeCards];
+            self.currentPosition = invisible;
         }];
 }
 @end
