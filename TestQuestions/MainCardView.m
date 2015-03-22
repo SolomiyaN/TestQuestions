@@ -96,10 +96,8 @@ const float kKoeficientScale = 5.f;
             break;
         case back:
         case inQueue:
-            [self adjustBackFrame];
-            break;
         case invisible:
-            [self adjustInvisibleFrame];
+            [self adjustBackFrame];
             break;
             
         default:
@@ -109,11 +107,12 @@ const float kKoeficientScale = 5.f;
 
 - (void)adjustFrontFrame
 {
+    NSLog(@"%@", self);
     self.alpha = 1.;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize frontSize = CGSizeMake(frame.size.width * kFrontHorizontalPersent / 100,
                                   frame.size.height * kFrontVerticalPersent / 100);
-    _viewPosition.size = frontSize;
+//    _viewPosition.size = frontSize;
     self.frame = CGRectMake(0, 0, frontSize.width, frontSize.height);
     float sideSpace = (frame.size.width - frontSize.width) / 2;
     self.center = CGPointMake(frame.size.width/2, frame.size.height/2 + sideSpace);
@@ -125,14 +124,10 @@ const float kKoeficientScale = 5.f;
     CGRect frame = [UIScreen mainScreen].bounds;
     CGSize backSize = CGSizeMake(frame.size.width * kBackHorizontalPersent / 100,
                                   frame.size.height * kBackVerticalPersent / 100);
-    _viewPosition.size = backSize;
+//    _viewPosition.size = backSize;
     self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
     float sideSpace = (frame.size.width - backSize.width) / 2.8;
     self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
-}
-
-- (void)adjustInvisibleFrame {
-    self.frame = CGRectMake(0., 0., 0., 0.);
 }
 
 - (void) increaseSizeDuringTouch

@@ -15,6 +15,7 @@ const int cardsType = 4;
 @interface ViewController () <MainCardViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *cardViews;
+
 @property NSInteger cardsAmount;
 @property NSInteger currentCard;
 
@@ -40,7 +41,7 @@ const int cardsType = 4;
         [self.cardViews addObject:[MainCardView invisibleCard]];
     }
     
-    for (int i = (int)[self.cardViews count]-1; i--; i >= 0) {
+    for (int i = (int)[self.cardViews count]; i--; i >= 0) {
         [self.view addSubview:self.cardViews[i]];
         ((MainCardView *)self.cardViews[i]).delegate = self;
     }
@@ -51,6 +52,7 @@ const int cardsType = 4;
 #pragma marks - MainCardViewDelegate Methods
 
 - (void)changeCards {
+    
     [self.view sendSubviewToBack:((MainCardView *)self.cardViews[self.currentCard])];
     self.currentCard = [self.cardsEnumarator nextTo:self.currentCard];
 
