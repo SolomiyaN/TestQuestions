@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Variant.h"
 
 @interface CardObject : NSObject
 
@@ -19,5 +20,9 @@
 @property (nonatomic) NSInteger points;
 
 @property (nonatomic) BOOL isFavourite;
+
+@property (nonatomic, strong) NSMutableArray *varients;
+
+- (NSMutableArray *)setVariantsFromArray:(NSMutableArray *)variantsArray;
 
 @end

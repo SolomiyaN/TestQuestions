@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32301E321ABEFFE100A92040 /* DataDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 32301E311ABEFFE100A92040 /* DataDownloader.m */; };
 		32301E361ABF155100A92040 /* CardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32301E351ABF155100A92040 /* CardObject.m */; };
+		32301E391ABF1D9900A92040 /* Variant.m in Sources */ = {isa = PBXBuildFile; fileRef = 32301E381ABF1D9900A92040 /* Variant.m */; };
 		32C2784F1ABEBB6E00311215 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2784E1ABEBB6E00311215 /* main.m */; };
 		32C278521ABEBB6E00311215 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C278511ABEBB6E00311215 /* AppDelegate.m */; };
 		32C278551ABEBB6E00311215 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C278541ABEBB6E00311215 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 		32301E311ABEFFE100A92040 /* DataDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDownloader.m; sourceTree = "<group>"; };
 		32301E341ABF155100A92040 /* CardObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardObject.h; sourceTree = "<group>"; };
 		32301E351ABF155100A92040 /* CardObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardObject.m; sourceTree = "<group>"; };
+		32301E371ABF1D9900A92040 /* Variant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variant.h; sourceTree = "<group>"; };
+		32301E381ABF1D9900A92040 /* Variant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variant.m; sourceTree = "<group>"; };
 		32C278491ABEBB6E00311215 /* TestQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C2784D1ABEBB6E00311215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32C2784E1ABEBB6E00311215 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 			children = (
 				32301E341ABF155100A92040 /* CardObject.h */,
 				32301E351ABF155100A92040 /* CardObject.m */,
+				32301E371ABF1D9900A92040 /* Variant.h */,
+				32301E381ABF1D9900A92040 /* Variant.m */,
 			);
 			name = DOM;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32301E361ABF155100A92040 /* CardObject.m in Sources */,
+				32301E391ABF1D9900A92040 /* Variant.m in Sources */,
 				32C278551ABEBB6E00311215 /* ViewController.m in Sources */,
 				32C278521ABEBB6E00311215 /* AppDelegate.m in Sources */,
 				AFFDAAD81ABF02AA00E3DA2D /* CardsEnumarator.m in Sources */,
