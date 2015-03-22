@@ -128,10 +128,8 @@ const float kKoeficientScale = 5.f;
                                   frame.size.height * kBackVerticalPersent / 100);
     float sideSpace = (frame.size.width - backSize.width) / 2.8;
     
-    [UIView animateWithDuration:0.3 animations:^ {
-        self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
-        self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
-    }];
+    self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
+    self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
 }
 
 - (void) increaseSizeDuringTouch
@@ -179,11 +177,6 @@ const float kKoeficientScale = 5.f;
         } completion:^(BOOL finished) {
             [self.delegate changeCards];
             self.currentPosition = inQueue;
-            
-            self.frame = CGRectMake(self.frame.origin.x,
-                                    -[UIScreen mainScreen].bounds.size.height,
-                                    self.frame.size.width,
-                                    self.frame.size.height);
         }];
 }
 @end
