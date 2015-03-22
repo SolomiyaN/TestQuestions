@@ -25,6 +25,34 @@ const float kKoeficientScale = 5.f;
 }
 */
 
++ (instancetype)defaultCard {
+    return [[MainCardView alloc] init];
+}
+
++ (instancetype)frontCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = front;
+    return card;
+}
+
++ (instancetype)backCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = back;
+    return card;
+}
+
++ (instancetype)inQueueCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = back; // frame should be the same as back card has in order to look good on cards switch
+    return card;
+}
+
++ (instancetype)invisibleCard {
+    MainCardView *card = [self defaultCard];
+    card.currentPosition = invisible;
+    return card;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -67,8 +95,11 @@ const float kKoeficientScale = 5.f;
             [self adjustFrontFrame];
             break;
         case back:
-            case inQueue:
+        case inQueue:
             [self adjustBackFrame];
+            break;
+        case invisible:
+            [self adjustInvisibleFrame];
             break;
             
         default:
@@ -97,6 +128,10 @@ const float kKoeficientScale = 5.f;
     self.frame = CGRectMake(0, 0, backSize.width, backSize.height);
     float sideSpace = (frame.size.width - backSize.width) / 2.8;
     self.center = CGPointMake(frame.size.width/2, frame.size.height/2 - sideSpace);
+}
+
+- (void)adjustInvisibleFrame {
+    self.frame = CGRectMake(0., 0., 0., 0.);
 }
 
 - (void) increaseSizeDuringTouch

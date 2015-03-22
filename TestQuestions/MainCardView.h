@@ -35,4 +35,9 @@ struct PositionView
 
 - (void)setCurrentPosition:(enum statesPosition)currentPosition;
 
++ (instancetype)frontCard;
++ (instancetype)backCard;
++ (instancetype)inQueueCard;
++ (instancetype)invisibleCard;
+
 @end
