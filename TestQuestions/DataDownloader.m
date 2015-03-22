@@ -36,6 +36,8 @@
                 card.text = [dictionary objectForKey:@"text"];
                 card.points = [[dictionary objectForKey:@"points"] integerValue];
                 card.isFavourite = [[dictionary objectForKey:@"favourite"] boolValue];
+                NSMutableArray *variantsArray = dictionary[@"variants"];
+                card.varients = [card setVariantsFromArray:variantsArray];
                 
                 [cardsMuttableArray addObject:card];
             }
