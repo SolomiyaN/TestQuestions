@@ -42,7 +42,7 @@ const int cardsType = 4;
         [self.cardViews addObject:[MainCardView invisibleCard]];
     }
     
-    for (int i = (int)[self.cardViews count]; i >= 0; i--) {
+    for (int i = (int)[self.cardViews count]-1; i >= 0; i-- ) {
         [self.view addSubview:self.cardViews[i]];
         ((MainCardView *)self.cardViews[i]).delegate = self;
     }
