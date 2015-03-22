@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MainCardView.h"
+#import "DataDownloader.h"
 
 const int cardsType = 4;
 
@@ -30,11 +31,21 @@ const int cardsType = 4;
     MainCardView *mainCard1 = [[MainCardView alloc] init];
     mainCard1.currentPosition = front;
     [self.view addSubview:mainCard1];
+    
+    
+    DataDownloader *dataDownloader = [DataDownloader new];
+    [dataDownloader downloadDataWithCompletion:^(BOOL finished, NSMutableArray *responseArray) {
+        if(finished){
+            NSLog(@"RESPONSE: %@", responseArray);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

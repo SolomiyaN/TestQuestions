@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32301E321ABEFFE100A92040 /* DataDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 32301E311ABEFFE100A92040 /* DataDownloader.m */; };
+		32301E361ABF155100A92040 /* CardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 32301E351ABF155100A92040 /* CardObject.m */; };
 		32C2784F1ABEBB6E00311215 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C2784E1ABEBB6E00311215 /* main.m */; };
 		32C278521ABEBB6E00311215 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C278511ABEBB6E00311215 /* AppDelegate.m */; };
 		32C278551ABEBB6E00311215 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C278541ABEBB6E00311215 /* ViewController.m */; };
@@ -29,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32301E301ABEFFE100A92040 /* DataDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDownloader.h; sourceTree = "<group>"; };
+		32301E311ABEFFE100A92040 /* DataDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDownloader.m; sourceTree = "<group>"; };
+		32301E341ABF155100A92040 /* CardObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardObject.h; sourceTree = "<group>"; };
+		32301E351ABF155100A92040 /* CardObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardObject.m; sourceTree = "<group>"; };
 		32C278491ABEBB6E00311215 /* TestQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C2784D1ABEBB6E00311215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32C2784E1ABEBB6E00311215 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +71,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32301E2F1ABEFF3300A92040 /* Ethernet */ = {
+			isa = PBXGroup;
+			children = (
+				32301E331ABF103400A92040 /* DOM */,
+				32301E301ABEFFE100A92040 /* DataDownloader.h */,
+				32301E311ABEFFE100A92040 /* DataDownloader.m */,
+			);
+			name = Ethernet;
+			sourceTree = "<group>";
+		};
+		32301E331ABF103400A92040 /* DOM */ = {
+			isa = PBXGroup;
+			children = (
+				32301E341ABF155100A92040 /* CardObject.h */,
+				32301E351ABF155100A92040 /* CardObject.m */,
+			);
+			name = DOM;
+			sourceTree = "<group>";
+		};
 		32C278401ABEBB6E00311215 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +111,7 @@
 		32C2784B1ABEBB6E00311215 /* TestQuestions */ = {
 			isa = PBXGroup;
 			children = (
+				32301E2F1ABEFF3300A92040 /* Ethernet */,
 				32C278741ABEBEB300311215 /* ViewControllers */,
 				32C278731ABEBEA100311215 /* CustomXibs */,
 				32C278721ABEBE9A00311215 /* CustomViews */,
@@ -252,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32301E361ABF155100A92040 /* CardObject.m in Sources */,
 				32C278551ABEBB6E00311215 /* ViewController.m in Sources */,
 				32C278521ABEBB6E00311215 /* AppDelegate.m in Sources */,
 				32C2784F1ABEBB6E00311215 /* main.m in Sources */,
+				32301E321ABEFFE100A92040 /* DataDownloader.m in Sources */,
 				32C278771ABEBF3700311215 /* MainCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +468,7 @@
 				32C2786E1ABEBB6E00311215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32C2786F1ABEBB6E00311215 /* Build configuration list for PBXNativeTarget "TestQuestionsTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +477,7 @@
 				32C278711ABEBB6E00311215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
